@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap");
+@import "tailwindcss";
+
+/* LogicLabz brand — electric blue #007AFF, gold #F9C80E, navy #050A14 */
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-brand: #007aff;
+  --color-brand-hover: #0066d9;
+  --color-brand-cyan: #00d1ff;
+  --color-brand-gold: #f9c80e;
+  --color-surface: hsl(var(--surface));
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 50% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 50% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 50% 12%;
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 46 95% 52%;
+    --secondary-foreground: 215 50% 12%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 211 100% 50%;
+    --surface: 210 20% 96%;
+    --radius: 0.875rem;
+  }
+
+  .dark {
+    --background: 216 64% 5%;
+    --foreground: 210 40% 98%;
+    --card: 216 45% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 216 64% 5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 46 95% 52%;
+    --secondary-foreground: 215 50% 12%;
+    --muted: 216 35% 12%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 216 30% 16%;
+    --input: 216 30% 14%;
+    --ring: 211 100% 50%;
+    --surface: 216 50% 8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Satoshi", "Plus Jakarta Sans", sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+}
+
+::selection {
+  background: #007aff;
+  color: #fff;
+}
+
+.dark ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #050a14;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1a3a5c;
+  border-radius: 8px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #007aff;
+}
+
+.glass {
+  background: rgba(5, 10, 20, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 122, 255, 0.12);
+}
+.glass-light {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 122, 255, 0.12);
+}
+
+.brand-glow {
+  box-shadow:
+    0 0 0 1px rgba(0, 122, 255, 0.35),
+    0 8px 30px -8px rgba(0, 122, 255, 0.55);
+}
+.brand-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(0, 122, 255, 0.55),
+    0 12px 40px -8px rgba(0, 122, 255, 0.7);
+}
+
+.hero-mesh {
+  background:
+    radial-gradient(55% 45% at 75% 40%, rgba(0, 122, 255, 0.35) 0%, transparent 55%),
+    radial-gradient(40% 40% at 20% 70%, rgba(0, 209, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(50% 50% at 50% 50%, rgba(5, 10, 20, 0.4) 0%, transparent 70%);
+  animation: meshShift 18s ease-in-out infinite alternate;
+}
+
+.hero-mesh-light {
+  background:
+    radial-gradient(55% 45% at 75% 35%, rgba(0, 122, 255, 0.18) 0%, transparent 55%),
+    radial-gradient(40% 40% at 15% 80%, rgba(0, 209, 255, 0.08) 0%, transparent 60%);
+}
+
+@keyframes meshShift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -1%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-2%, 1%, 0) scale(1);
+  }
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.float-y {
+  animation: floatY 4.5s ease-in-out infinite;
+}
+.float-y-delayed {
+  animation: floatY 5.5s ease-in-out 0.8s infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.55;
+    filter: blur(24px);
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(32px);
+  }
+}
+.pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes scrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: scrollX 35s linear infinite;
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.4);
+  }
+}
+.pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.section-inset {
+  border-radius: 1.5rem;
+}
+
+/* ── Hero scene blend + bulb / icon-point animations ── */
+.hero-scene-mask {
+  -webkit-mask-image: radial-gradient(
+    ellipse 82% 78% at 55% 48%,
+    #000 42%,
+    rgba(0, 0, 0, 0.75) 62%,
+    rgba(0, 0, 0, 0.25) 78%,
+    transparent 92%
+  );
+  mask-image: radial-gradient(
+    ellipse 82% 78% at 55% 48%,
+    #000 42%,
+    rgba(0, 0, 0, 0.75) 62%,
+    rgba(0, 0, 0, 0.25) 78%,
+    transparent 92%
+  );
+}
+
+.hero-scene-fade-dark {
+  background:
+    linear-gradient(to right, #050a14 0%, transparent 18%, transparent 82%, rgba(5, 10, 20, 0.55) 100%),
+    linear-gradient(to bottom, rgba(5, 10, 20, 0.35) 0%, transparent 16%, transparent 72%, #050a14 100%);
+}
+
+.hero-scene-fade-light {
+  background:
+    linear-gradient(to right, #f8fafc 0%, transparent 18%, transparent 82%, rgba(248, 250, 252, 0.6) 100%),
+    linear-gradient(to bottom, rgba(248, 250, 252, 0.4) 0%, transparent 16%, transparent 72%, #f8fafc 100%);
+}
+
+@keyframes heroIconPoint {
+  0% {
+    opacity: 0.2;
+    transform: translate(0, 0) scale(0.7);
+  }
+  35% {
+    opacity: 1;
+    transform: translate(6px, -8px) scale(1.25);
+    box-shadow: 0 0 10px 2px rgba(0, 209, 255, 0.85);
+  }
+  70% {
+    opacity: 0.7;
+    transform: translate(-4px, 5px) scale(1);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translate(0, 0) scale(0.7);
+  }
+}
+.hero-icon-point {
+  animation: heroIconPoint 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-icon-point {
+    animation: none !important;
+  }
+}
+
+/* Tech stack section */
+.tech-gradient-text {
+  background: linear-gradient(90deg, #5eb8ff 0%, #007aff 45%, #00d1ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes techGlowDot {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0) scale(0.85);
+    box-shadow: 0 0 8px 2px rgba(0, 122, 255, 0.35);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateY(-10px) scale(1.15);
+    box-shadow: 0 0 18px 6px rgba(0, 209, 255, 0.55);
+  }
+}
+.tech-glow-dot {
+  background: radial-gradient(circle, #00d1ff 0%, #007aff 60%, transparent 70%);
+  animation: techGlowDot 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-glow-dot {
+    animation: none !important;
+  }
+}
+
+

@@ -1,0 +1,4 @@
+/* Component-level overrides handled in index.css; this file kept minimal. */
+.App {
+    min-height: 100vh;
+}
